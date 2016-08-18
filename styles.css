@@ -1,0 +1,41 @@
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: black;
+
+    /* Animation start values */
+    visibility: hidden;
+    opacity: 0;
+
+    -webkit-transition: -webkit-transform 1.5s, opacity 1.5s;
+    transition: transform 1.5s, opacity 1.5s;
+}
+
+/* These changes to the element will trigger the animations */
+.overlay-inc {
+    visibility: visible;
+    opacity: 0.8;
+}
+
+.box {
+    opacity: 0;
+    margin: 0 auto;
+    height: 400px;
+    width: 500px;
+    background: red;
+}
+
+.overlay-inc .box {
+    opacity: 1;
+
+    /* Pull it down from the top */
+    -webkit-transform: translateY(25%);
+    transform: translateY(25%);
+
+    /* Fade it in */
+    -webkit-transition: -webkit-transform 1.5s, opacity 1.5s;
+    transition: transform 1.5s, opacity 1.5s;
+}
